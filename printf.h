@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int	ft_eval_format(char *lst, const char *format, int i);
+int	ft_eval_format(const char *format, int i);
 int	ft_print_str(char *str);
 int	ft_print_char(char c);
 int	ft_print_nbr(int i);
