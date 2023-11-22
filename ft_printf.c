@@ -6,7 +6,7 @@
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:10:00 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 13:18:14 by jsarda           ###   ########.fr       */
+/*   Updated: 2023/11/22 13:25:53 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			len = len + ft_eval_format(format, i + 1);
+			len = len + ft_eval_format(args, format[i + 1]);
 			i++;
 		}
 		else
