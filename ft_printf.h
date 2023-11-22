@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 10:19:06 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 17:30:30 by jsarda           ###   ########.fr       */
+/*   Created: 2023/11/22 15:31:02 by jsarda            #+#    #+#             */
+/*   Updated: 2023/11/22 17:41:25 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_print_str(char *str)
-{
-	int	i;
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
-}
+int	ft_eval_format(va_list args, const char format);
+int	ft_print_str(char *str);
+int	ft_print_char(int c);
+int	ft_print_nbr_unsigned(unsigned int i);
+int	ft_print_nbr(int i);
+int	ft_print_ptr(unsigned long long ptr);
+int	ft_print_ptr_hexa(unsigned int i, const char format);
+
+#endif

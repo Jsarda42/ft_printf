@@ -6,11 +6,11 @@
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:30:45 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 13:14:52 by jsarda           ###   ########.fr       */
+/*   Updated: 2023/11/22 17:30:09 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_print_char(int c)
 {

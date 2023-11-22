@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 10:19:06 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 17:30:30 by jsarda           ###   ########.fr       */
+/*   Created: 2023/11/22 13:47:28 by jsarda            #+#    #+#             */
+/*   Updated: 2023/11/22 17:30:17 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_str(char *str)
+int	ft_print_nbr(int i)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	if (i < 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		ft_print_char('-');
+		i = -i;
 	}
+	if (i >= 10)
+	{
+		ft_print_nbr(i / 10);
+		ft_print_nbr(i % 10);
+	}
+	else
+		ft_print_char(i + 48);
 	return (i);
 }

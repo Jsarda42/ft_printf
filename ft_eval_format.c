@@ -6,11 +6,11 @@
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:09:26 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 13:35:31 by jsarda           ###   ########.fr       */
+/*   Updated: 2023/11/22 17:30:05 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_eval_format(va_list args, const char format)
 {
@@ -22,17 +22,16 @@ int	ft_eval_format(va_list args, const char format)
 	else if (format == 's')
 		len = len + ft_print_str(va_arg(args, char *));
 	else if (format == 'p')
-		len = len + ft_print_adress(va_arg(args, unsigned long long));
+		len = len + ft_print_ptr(va_arg(args, unsigned long long));
 	else if (format == 'd' || format == 'i')
 		len = len + ft_print_nbr(va_arg(args, int));
 	else if (format == 'u')
 		len = len + ft_print_nbr_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		len = len + ft_print_nbr_hexa(va_arg(args, unsigned int));
+		len = len + ft_print_ptr_hexa(va_arg(args, unsigned int), format);
 	else if (format == '%')
 	{
-		write(1, '%', 1);
-		len = 1;
+		len = ft_print_char('%');
 	}
 	return (len);
 }
