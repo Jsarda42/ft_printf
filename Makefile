@@ -3,7 +3,7 @@ OBJS = $(SRCS:.c=.o)
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
-NAME = printf.a
+NAME = libftprintf.a
 
 all: $(NAME)
 

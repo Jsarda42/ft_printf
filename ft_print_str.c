@@ -6,7 +6,7 @@
 /*   By: jsarda <jsarda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:19:06 by jsarda            #+#    #+#             */
-/*   Updated: 2023/11/22 17:30:30 by jsarda           ###   ########.fr       */
+/*   Updated: 2023/11/23 12:33:57 by jsarda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_print_str(char *str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+		return (write(1, "(null)", 6));
 	while (str[i])
 	{
 		write(1, &str[i], 1);
